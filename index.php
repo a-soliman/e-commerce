@@ -49,6 +49,13 @@
 			</div>
 		</nav>
 
+		<!-- inserting images -->
+		<div id="background-image">
+			<div id="image-1"></div>
+			<div id="image-2"></div>
+		</div>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae maxime, illo quod iste quaerat! Maxime, molestiae aliquid laudantium corporis aperiam doloremque officiis ipsam ducimus magnam necessitatibus placeat. Quo veritatis, vero.</p>
+
 	</body>
 	
 </html>
