@@ -22,3 +22,14 @@
 	top: -100px;
 	left: -25px;
 }
+#image-2 {
+	position: absolute;
+	width: 70%;
+	height: 190px;
+	background-image: url(../img/ecommerce.png);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	background-size: 50% 200px;
+	top: 80%;
+	margin-top: -90px;
+}
