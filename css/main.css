@@ -11,3 +11,14 @@
 	background-position: top center;
 	background-attachment: fixed; 
 }
+#image-1 {
+	position: absolute;
+	width: 50%;
+	height: 350px;
+	background-image: url(../img/ecommerce2.png);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	background-size: auto 200px;
+	top: -100px;
+	left: -25px;
+}
