@@ -19,15 +19,20 @@
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/main.js"></script>
 	</head>
+
+	<body>
+		<!-- NaV -->
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<a href="index.php" class="navbar-brand">Red Stone Shop</a>
+
+				<ul class="nav navbar-nav">
+					
+				</ul>
+			</div>
+		</nav>
+
+	</body>
 	
 </html>
 
-<nav class="navbar navbar-default navbar-fixed-top">
-	<div class="container">
-		<a href="/bootstrap4/index.php" class="navbar-brand">Red Stone Shop</a>
-
-		<ul class="nav navbar-nav">
-			
-		</ul>
-	</div>
-</nav>
