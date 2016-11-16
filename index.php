@@ -9,7 +9,7 @@
 		<!-- Font Awesome -->
 		<script src="https://use.fontawesome.com/2415393c0d.js"></script>
 		<!-- Animate.css -->
-		<link rel="stylesheet" type="text/css" href="css/animate.css">
+		<!-- <link rel="stylesheet" type="text/css" href="css/animate.css"> -->
 		<!-- Bootstrap.css -->
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 		<!-- Custom Style Sheet -->
@@ -25,9 +25,26 @@
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<div class="container">
 				<a href="index.php" class="navbar-brand">Red Stone Shop</a>
-
+				
+				<!-- Dropdown menu -->
 				<ul class="nav navbar-nav">
-					
+					<li class="dropdown">
+						<a href="#" class="dropdown-tggle" data-toggle="dropdown" id="text">Men <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li>
+								<a href="#">Shirts</a>
+							</li>
+							<li>
+								<a href="#">Shoes</a>
+							</li>
+							<li>
+								<a href="#">Accessories</a>
+							</li>
+							<li>
+								<a href="#">Pants</a>
+							</li>
+						</ul>
+					</li>	
 				</ul>
 			</div>
 		</nav>
