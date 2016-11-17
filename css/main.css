@@ -35,3 +35,9 @@
 	top: 80%;
 	margin-top: -90px;
 }
+
+/*Featured Products*/
+.featured-products {}
+.featured-products img {
+	max-height: 200px;
+}
