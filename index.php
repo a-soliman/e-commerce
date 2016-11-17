@@ -54,7 +54,24 @@
 			<div id="image-1"></div>
 			<div id="image-2"></div>
 		</div>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae maxime, illo quod iste quaerat! Maxime, molestiae aliquid laudantium corporis aperiam doloremque officiis ipsam ducimus magnam necessitatibus placeat. Quo veritatis, vero.</p>
+
+		<!-- Main Content -->
+		<div class="container-fluid featured-products">
+			<div class="col-md-8">
+				<div class="row">
+					<h2 class="text-center">Featured Products</h2>
+					<div class="col-md-3">
+						<h4>Levis Jeans</h4>
+						<img src="img/levis.png" alt="Levis">
+						<p class="list-price text-danger">List Price: <s>$24.99</s></p>
+						<p class="price">Price: $19.99</p>
+						<button type="button" class="btn btn-success" data-toggle="model" data-target="details-1">Details</button>
+					</div>
+				</div> <!-- row -->
+			</div> <!-- col-8 -->
+
+		</div>
+
 
 	</body>
 	
