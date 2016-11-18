@@ -57,7 +57,7 @@
 
 		<!-- Main Content -->
 		<div class="container-fluid featured-products">
-			<div class="col-md-8">
+			<div class="col-md-8 col-md-offset-2">
 				<div class="row">
 					<h2 class="text-center">Featured Products</h2>
 					<div class="col-md-3">
@@ -94,6 +94,12 @@
 				</div> <!-- row -->
 			</div> <!-- col-8 -->
 		</div>
+
+		<!-- Footer -->
+		<footer class="text-center" id="footer">
+			<p>$copy; Copyright 2016-2017 Ahmed Soliman</p>
+			
+		</footer>
 
 
 	</body>
