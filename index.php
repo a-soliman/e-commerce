@@ -102,7 +102,15 @@
 		</footer>
 
 
+		<!-- Details Modul -->
+		<?php include 'details-modal-LevisJeans.php';
+		      include 'details-modal-ag-jeans.php';
+		      include 'details-modal-macys.php';
+		      include 'details-modal-old-navy.php'; 
+		?>
+			
+
+
 	</body>
-	
 </html>
 
