@@ -65,7 +65,7 @@
 						<img src="img/levis.png" alt="Levis">
 						<p class="list-price text-danger">List Price: <s>$24.99</s></p>
 						<p class="price">Price: $19.99</p>
-						<button type="button" class="btn btn-success" data-toggle="model" data-target="details-1">Details</button>
+						<button type="button" class="btn btn-success" data-toggle="modal" data-target="#details-1">Details</button>
 					</div>
 
 					<div class="col-md-3">
@@ -73,7 +73,7 @@
 						<img src="img/ag-jeans.png" alt="ag-jeans">
 						<p class="list-price text-danger">List Price: <s>$215.00</s></p>
 						<p class="price">Price: $129.99</p>
-						<button type="button" class="btn btn-success" data-toggle="model" data-target="details-2">Details</button>
+						<button type="button" class="btn btn-success" data-toggle="modal" data-target="#details-2">Details</button>
 					</div>
 
 					<div class="col-md-3">
@@ -81,7 +81,7 @@
 						<img src="img/macys.png" alt="macys">
 						<p class="list-price text-danger">List Price: <s>$66.99</s></p>
 						<p class="price">Price: $39.99</p>
-						<button type="button" class="btn btn-success" data-toggle="model" data-target="details-3">Details</button>
+						<button type="button" class="btn btn-success" data-toggle="modal" data-target="#details-3">Details</button>
 					</div>
 
 					<div class="col-md-3">
@@ -89,7 +89,7 @@
 						<img src="img/old-navy.png" alt="old-navy">
 						<p class="list-price text-danger">List Price: <s>$34.99</s></p>
 						<p class="price">Price: $20.00</p>
-						<button type="button" class="btn btn-success" data-toggle="model" data-target="details-4">Details</button>
+						<button type="button" class="btn btn-success" data-toggle="modal" data-target="#details-4">Details</button>
 					</div>
 				</div> <!-- row -->
 			</div> <!-- col-8 -->
@@ -97,7 +97,8 @@
 
 		<!-- Footer -->
 		<footer class="text-center" id="footer">
-			<p>$copy; Copyright 2016-2017 Ahmed Soliman</p>
+			<p>&copy; Copyright 2016-2017</p>
+			<p>Ahmed Soliman</p>
 			
 		</footer>
 
