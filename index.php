@@ -24,6 +24,11 @@
 	</head>
 
 	<body>
+
+	<?php 
+	$sql = 'SELECT *FROM caregories WHERE parent = 0';
+	$pquery = $db->query($sql);
+	?>
 		<!-- NaV -->
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<div class="container">
@@ -31,6 +36,12 @@
 				
 				<!-- Dropdown menu -->
 				<ul class="nav navbar-nav">
+					<?php while($parent = mysqli_fetch_assoc($pquery)); ?>
+					<?php 
+					$parent_id = $parent ['id'];
+					$sql2 = "SELECT * FROM categories WHERE parent = '$parent_id'";
+					$squery = $db->query($sql2);
+					?>
 					<li class="dropdown">
 						<a href="#" class="dropdown-tggle" data-toggle="dropdown" id="text">Men <span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
