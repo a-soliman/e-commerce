@@ -60,7 +60,7 @@
 			<div class="col-md-8 col-md-offset-2">
 				<div class="row">
 					<h2 class="text-center">Featured Products</h2>
-					<div class="col-md-3">
+					<div class="col-sm-3">
 						<h4>Levi's Jeans</h4>
 						<img src="img/levis.png" alt="Levis">
 						<p class="list-price text-danger">List Price: <s>$24.99</s></p>
@@ -68,7 +68,7 @@
 						<button type="button" class="btn btn-success" data-toggle="modal" data-target="#details-1">Details</button>
 					</div>
 
-					<div class="col-md-3">
+					<div class="col-sm-3">
 						<h4>AgJeans</h4>
 						<img src="img/ag-jeans.png" alt="ag-jeans">
 						<p class="list-price text-danger">List Price: <s>$215.00</s></p>
@@ -76,7 +76,7 @@
 						<button type="button" class="btn btn-success" data-toggle="modal" data-target="#details-2">Details</button>
 					</div>
 
-					<div class="col-md-3">
+					<div class="col-sm-3">
 						<h4>Mecy's Jeans</h4>
 						<img src="img/macys.png" alt="macys">
 						<p class="list-price text-danger">List Price: <s>$66.99</s></p>
@@ -84,7 +84,7 @@
 						<button type="button" class="btn btn-success" data-toggle="modal" data-target="#details-3">Details</button>
 					</div>
 
-					<div class="col-md-3">
+					<div class="col-sm-3">
 						<h4>Old Navy Jeans</h4>
 						<img src="img/old-navy.png" alt="old-navy">
 						<p class="list-price text-danger">List Price: <s>$34.99</s></p>
