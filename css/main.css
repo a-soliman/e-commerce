@@ -55,7 +55,7 @@ p {
 .featured-products img {
 	max-height: 200px;
 }
-
+img.details {}
 /*footer*/
 footer {
 	margin-top: 50px;
