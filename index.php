@@ -26,7 +26,7 @@
 	<body>
 
 	<?php 
-	$sql = 'SELECT *FROM caregories WHERE parent = 0';
+	$sql = 'SELECT * FROM categories WHERE parent = 0';
 	$pquery = $db->query($sql);
 	?>
 		<!-- NaV -->
@@ -36,29 +36,23 @@
 				
 				<!-- Dropdown menu -->
 				<ul class="nav navbar-nav">
-					<?php while($parent = mysqli_fetch_assoc($pquery)); ?>
+					<?php while($parent = mysqli_fetch_assoc($pquery)): ?>
 					<?php 
 					$parent_id = $parent ['id'];
 					$sql2 = "SELECT * FROM categories WHERE parent = '$parent_id'";
-					$squery = $db->query($sql2);
+					$cquery = $db->query($sql2);
 					?>
 					<li class="dropdown">
-						<a href="#" class="dropdown-tggle" data-toggle="dropdown" id="text">Men <span class="caret"></span></a>
+						<a href="#" class="dropdown-tggle" data-toggle="dropdown" id="text"><?php echo $parent['category']; ?><span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
+							<?php while($child = mysqli_fetch_assoc($cquery)) :?>
 							<li>
-								<a href="#">Shirts</a>
+								<a href="#"><?php echo $child['category']; ?></a>
 							</li>
-							<li>
-								<a href="#">Shoes</a>
-							</li>
-							<li>
-								<a href="#">Accessories</a>
-							</li>
-							<li>
-								<a href="#">Pants</a>
-							</li>
+							<?php endwhile; ?>
 						</ul>
-					</li>	
+					</li>
+					<?php endwhile; ?>	
 				</ul>
 			</div>
 		</nav>
@@ -128,4 +122,3 @@
 
 	</body>
 </html>
-
