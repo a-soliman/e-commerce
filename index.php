@@ -1,5 +1,7 @@
 <?php 
 	require_once 'core/init.php';
+	$sql = "SELECT * FROM products WHERE featured = 1";
+	$featured = $db->query($sql);
 	?>
 <!DOCTYPE html>
 <html lang="en">
@@ -68,15 +70,17 @@
 			<div class="col-md-8 col-md-offset-2">
 				<div class="row">
 					<h2 class="text-center">Featured Products</h2>
+					<?php while($product = mysqli_fetch_assoc($featured)) : ?>
 					<div class="col-sm-3">
-						<h4>Levi's Jeans</h4>
-						<img src="img/levis.png" alt="Levis">
-						<p class="list-price text-danger">List Price: <s>$24.99</s></p>
-						<p class="price">Price: $19.99</p>
+						<h4><?= $product['title']; ?></h4>
+						<img src="<?=$product['image']; ?>" alt="<?=$product['title']; ?>" id="images">
+						<p class="list-price text-danger">List Price: <s>$<?=$product['list_price']; ?></s></p>
+						<p class="price">Price: $<?=$product['price']; ?></p>
 						<button type="button" class="btn btn-success" data-toggle="modal" data-target="#details-1">Details</button>
 					</div>
+				<?php endwhile; ?>
 
-					<div class="col-sm-3">
+					<!-- <div class="col-sm-3">
 						<h4>AgJeans</h4>
 						<img src="img/ag-jeans.png" alt="ag-jeans">
 						<p class="list-price text-danger">List Price: <s>$215.00</s></p>
@@ -98,7 +102,7 @@
 						<p class="list-price text-danger">List Price: <s>$34.99</s></p>
 						<p class="price">Price: $20.00</p>
 						<button type="button" class="btn btn-success" data-toggle="modal" data-target="#details-4">Details</button>
-					</div>
+					</div> -->
 				</div> <!-- row -->
 			</div> <!-- col-8 -->
 		</div>
