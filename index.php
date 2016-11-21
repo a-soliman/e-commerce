@@ -1,5 +1,9 @@
 <?php 
 	require_once 'core/init.php';
+
+	include 'includes/head.php';
+	include 'includes/navigation.php';
+	include 'includes/headerfull.php';
 	$sql = "SELECT * FROM products WHERE featured = 1";
 	$featured = $db->query($sql);
 	?>
@@ -29,6 +33,7 @@
 	      include 'details-modal-ag-jeans.php';
 	      include 'details-modal-macys.php';
 	      include 'details-modal-old-navy.php'; 
+		  include 'includes/footer.php';
 	?>
 			
 
