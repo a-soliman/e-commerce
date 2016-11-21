@@ -30,7 +30,7 @@
 	$pquery = $db->query($sql);
 	?>
 		<!-- NaV -->
-		<nav class="navbar navbar-default navbar-fixed-top">
+		<nav class="navbar navbar-fixed-top">
 			<div class="container">
 				<a href="index.php" class="navbar-brand">Red Stone Shop</a>
 				
