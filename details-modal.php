@@ -23,7 +23,7 @@ $size_array = explode(',', $sizestring);
 		<div class="modal-content">
 			<div class="modal-header">
 				<button class="close" type="button" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
+					<span aria-hidden="true" onclick="closemodal()">&times;</span>
 				</button>
 				<h4 class="modal-title text-center"> <?=$product['title']; ?> </h4>
 			</div>
@@ -87,7 +87,7 @@ $size_array = explode(',', $sizestring);
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button class="btn btn-default" data-dismiss="modal">Close</button>
+				<button class="btn btn-default" data-dismiss="modal" onclick="closemodal()">Close</button>
 				<button class="btn btn-warning" type="submit"><span> <i class="fa fa-shopping-cart" aria-hidden="true"></i>  </span>Add to cart</button>
 			</div>
 		</div>
