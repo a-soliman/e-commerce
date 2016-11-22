@@ -34,7 +34,7 @@ nav.navbar a:hover {
 	position: absolute;
 	width: 50%;
 	height: 350px;
-	background-image: url(../img/ecommerce2.png);
+	background-image: url(../img/ecommerce2.jpg);
 	background-repeat: no-repeat;
 	background-position: left bottom;
 	background-size: auto 200px;
@@ -45,7 +45,7 @@ nav.navbar a:hover {
 	position: absolute;
 	width: 70%;
 	height: 190px;
-	background-image: url(../img/ecommerce.png);
+	background-image: url(../img/ecommerce.jpg);
 	background-repeat: no-repeat;
 	background-position: left bottom;
 	background-size: 50% 200px;
