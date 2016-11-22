@@ -19,7 +19,7 @@
 					<img src="<?=$product['image']; ?>" alt="<?=$product['title']; ?>" id="images">
 					<p class="list-price text-danger">List Price: <s>$<?=$product['list_price']; ?></s></p>
 					<p class="price">Price: $<?=$product['price']; ?></p>
-					<button type="button" class="btn btn-success" data-toggle="modal" data-target="#details-1">Details</button>
+					<button type="button" class="btn btn-success" onclick="detailsmodal(<?=$product['id']; ?>)">Details</button>
 				</div>
 				<?php endwhile; ?>
 
@@ -29,10 +29,8 @@
 
 
 	<!-- Details Modul -->
-	<?php include 'details-modal-LevisJeans.php';
-	      include 'details-modal-ag-jeans.php';
-	      include 'details-modal-macys.php';
-	      include 'details-modal-old-navy.php'; 
+	<?php 
+
 		  include 'includes/footer.php';
 	?>
 			
