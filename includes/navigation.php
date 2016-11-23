@@ -26,7 +26,10 @@
 					<?php endwhile; ?>
 				</ul>
 			</li>
-			<?php endwhile; ?>	
+			<?php endwhile; ?>
+		</ul>
+		<ul class="nav navbar-nav cart">
+			<li><a href="cart.php" id="cartbutton"><span> <i class="fa fa-shopping-cart" aria-hidden="true"></i></span> My Cart</a></li>
 		</ul>
 	</div>
 </nav>
