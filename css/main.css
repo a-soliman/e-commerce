@@ -18,6 +18,9 @@ p {
 nav.navbar a:hover {
 	background-color: rgb(161, 61, 61);
 }
+.cart {
+	float: right;
+}
 #background-image {
 	position: relative;
 	padding: 0;
@@ -45,7 +48,7 @@ nav.navbar a:hover {
 	position: absolute;
 	width: 70%;
 	height: 190px;
-	background-image: url(../img/ecommerce.jpg);
+	background-image: url(../img/ecommerce.png);
 	background-repeat: no-repeat;
 	background-position: left bottom;
 	background-size: 50% 200px;
