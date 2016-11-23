@@ -27,6 +27,16 @@ if ($cart_id !='') {
 				Your Sopping Cart Is Empty!
 			</p>
 		</div>
-	<!-- <?php else: ?> -->
+		<?php else: ?>
+			<table class="table table-bordered table-condensed table-striped">
+				<thead>
+					<th>#</th>
+					<th>Item</th>
+					<th>Prices</th>
+					<th>Quantity</th>
+					<th>Size</th>
+					<th>Sub total</th>
+				</thead>
+			</table>
 	</div>
 </div>
