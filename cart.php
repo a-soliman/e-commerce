@@ -13,3 +13,20 @@ if ($cart_id !='') {
 }
 
 ?>
+
+<div class="col-md-12">
+	<div class="row">
+		<h2 class="text-center">My Shopping Cart</h2>
+		<hr>
+
+		<?php 
+		if ($cart_id == ''): ?>
+
+		<div class="bg-danger">
+			<p class="text-canter text-danger">
+				Your Sopping Cart Is Empty!
+			</p>
+		</div>
+	<!-- <?php else: ?> -->
+	</div>
+</div>
