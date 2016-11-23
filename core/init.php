@@ -11,7 +11,7 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/config.php';
 require_once BASEURL. 'helpers/helpers.php';
 
 $cart_id = '';
-if (isset)($COOKIE[CART_COOKIE]) {
+if (isset)($COOKIE[CART_COOKIE])) {
 	$cart_id = sanitize($_COOKIE[CART_COOKIE]);
 }
 
