@@ -37,6 +37,33 @@ if ($cart_id !='') {
 					<th>Size</th>
 					<th>Sub total</th>
 				</thead>
+				<tbody>
+					<?php 
+					foreach ($$item as $item) {
+						$product_id = $item['id'];
+						$productQ =$db->query("SELECT * FROM products WHERE id = '($product_id)'");
+						$product = mysqli_fetch_assoc($productQ);
+						$sArray = explode(',',$product['sizes']);
+						foreach($sArray as $sizeString) {
+							$s =explode(':',$sizeString);
+							if($s[0] == $item ['size']) {
+								$available = $s[1];
+							}
+						}
+					}
+					?>
+					<tr>
+						<td><?=Si;?></td>
+						<td><?=Sproduct['item'];?></td>
+						<td><?=money($product['price']);?></td>
+
+						<td>
+							<button class="btn btn-xs btn-default" onclick="update_cart('removeone', '<?=$product['id'];?>','<?=$item['size'];?>');"></button>
+							
+						</td>
+
+					</tr>
+				</tbody>
 			</table>
 	</div>
 </div>
