@@ -50,7 +50,7 @@ if ($cart_id !='') {
 								$available = $s[1];
 							}
 						}
-					}
+					
 					?>
 					<tr>
 						<td><?=Si;?></td>
@@ -74,8 +74,15 @@ if ($cart_id !='') {
 
 						<td><?=$item['size']; ?></td>
 						<td><?=money($item['quantity'] * $product['price']); ?></td>
-
 					</tr>
+
+					<?php 
+						$i++;
+						$item_count += $item['quantity'];
+						$sub_total += ($product['price'] * $item['quantity']);
+
+					} //ends the for each on line 42
+					?>
 				</tbody>
 			</table>
 	</div>
