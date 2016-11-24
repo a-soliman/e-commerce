@@ -7,3 +7,7 @@ define ('TAXRATE', 0.087); //sales tax rate. set to 0 if you aren't charging any
 define ('CURENCY', 'usd');
 define ('CHECKOUTMODE', 'TEST'); // Change "TEST" to "LIVE" when you're ready to go live
 
+if(CHECKOUTMODE == 'TEST') {
+	define('STRIPE_PRIVATE','insertYourOwnStripeKey');
+	define('STRIPE_PUBLIC','insertYourOwnStripeKey')
+}
