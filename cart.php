@@ -6,7 +6,7 @@ include 'includes/headerpartial.php'
 if ($cart_id !='') {
 	$cartQ = db->query("SELECT * FROM cart WHILE id = '($cart_id)'");
 	$result = mysqli_fetch_assoc($cartQ);
-	$items =json_decode($result['items'], true);
+	$items = json_decode($result['items'], true);
 	$i = 1;
 	$sub_total = 0;
 	$item_count = 0;
@@ -58,14 +58,22 @@ if ($cart_id !='') {
 						<td><?=money($product['price']);?></td>
 
 						<td>
-							<button class="btn btn-xs btn-default" onclick="update_cart('removeone', '<?=$product['id'];?>','<?=$item['size'];?>');"></button>
+							<button class="btn btn-xs btn-default" onclick="update_cart('removeone', '<?=$product['id'];?>','<?=$item['size'];?>');">-</button>
 
 							<?=$item['quantity'];?>
 							<?php if ($item['quantity'] < $available): ?>
 
-							<button class="btn btn-xs btn-default" onclick="update_cart('addone', '<?=$product['id'];?>','<?=$item['size'];?>');"></button>
+							<button class="btn btn-xs btn-default" onclick="update_cart('addone', '<?=$product['id'];?>','<?=$item['size'];?>');">+</button>
+
+						<?php else: ?>
+							<span class="text-danger">Max</span>
+
+						<?php endif; ?>
 
 						</td>
+
+						<td><?=$item['size']; ?></td>
+						<td><?=money($item['quantity'] * $product['price']); ?></td>
 
 					</tr>
 				</tbody>
