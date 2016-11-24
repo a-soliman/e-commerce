@@ -59,7 +59,12 @@ if ($cart_id !='') {
 
 						<td>
 							<button class="btn btn-xs btn-default" onclick="update_cart('removeone', '<?=$product['id'];?>','<?=$item['size'];?>');"></button>
-							
+
+							<?=$item['quantity'];?>
+							<?php if ($item['quantity'] < $available): ?>
+
+							<button class="btn btn-xs btn-default" onclick="update_cart('addone', '<?=$product['id'];?>','<?=$item['size'];?>');"></button>
+
 						</td>
 
 					</tr>
