@@ -28,62 +28,67 @@ if ($cart_id !='') {
 			</p>
 		</div>
 		<?php else: ?>
-			<table class="table table-bordered table-condensed table-striped">
-				<thead>
-					<th>#</th>
-					<th>Item</th>
-					<th>Prices</th>
-					<th>Quantity</th>
-					<th>Size</th>
-					<th>Sub total</th>
-				</thead>
-				<tbody>
-					<?php 
-					foreach ($$item as $item) {
-						$product_id = $item['id'];
-						$productQ =$db->query("SELECT * FROM products WHERE id = '($product_id)'");
-						$product = mysqli_fetch_assoc($productQ);
-						$sArray = explode(',',$product['sizes']);
-						foreach($sArray as $sizeString) {
-							$s =explode(':',$sizeString);
-							if($s[0] == $item ['size']) {
-								$available = $s[1];
-							}
+		<table class="table table-bordered table-condensed table-striped">
+			<thead>
+				<th>#</th>
+				<th>Item</th>
+				<th>Prices</th>
+				<th>Quantity</th>
+				<th>Size</th>
+				<th>Sub total</th>
+			</thead>
+			<tbody>
+				<?php 
+				foreach ($$item as $item) {
+					$product_id = $item['id'];
+					$productQ =$db->query("SELECT * FROM products WHERE id = '($product_id)'");
+					$product = mysqli_fetch_assoc($productQ);
+					$sArray = explode(',',$product['sizes']);
+					foreach($sArray as $sizeString) {
+						$s =explode(':',$sizeString);
+						if($s[0] == $item ['size']) {
+							$available = $s[1];
 						}
-					
-					?>
-					<tr>
-						<td><?=Si;?></td>
-						<td><?=Sproduct['item'];?></td>
-						<td><?=money($product['price']);?></td>
+					}
+				
+				?>
+				<tr>
+					<td><?=Si;?></td>
+					<td><?=Sproduct['item'];?></td>
+					<td><?=money($product['price']);?></td>
 
-						<td>
-							<button class="btn btn-xs btn-default" onclick="update_cart('removeone', '<?=$product['id'];?>','<?=$item['size'];?>');">-</button>
+					<td>
+						<button class="btn btn-xs btn-default" onclick="update_cart('removeone', '<?=$product['id'];?>','<?=$item['size'];?>');">-</button>
 
-							<?=$item['quantity'];?>
-							<?php if ($item['quantity'] < $available): ?>
+						<?=$item['quantity'];?>
+						<?php if ($item['quantity'] < $available): ?>
 
-							<button class="btn btn-xs btn-default" onclick="update_cart('addone', '<?=$product['id'];?>','<?=$item['size'];?>');">+</button>
+						<button class="btn btn-xs btn-default" onclick="update_cart('addone', '<?=$product['id'];?>','<?=$item['size'];?>');">+</button>
 
-						<?php else: ?>
-							<span class="text-danger">Max</span>
+					<?php else: ?>
+						<span class="text-danger">Max</span>
 
-						<?php endif; ?>
+					<?php endif; ?>
 
-						</td>
+					</td>
 
-						<td><?=$item['size']; ?></td>
-						<td><?=money($item['quantity'] * $product['price']); ?></td>
-					</tr>
+					<td><?=$item['size']; ?></td>
+					<td><?=money($item['quantity'] * $product['price']); ?></td>
+				</tr>
 
-					<?php 
-						$i++;
-						$item_count += $item['quantity'];
-						$sub_total += ($product['price'] * $item['quantity']);
+				<?php 
+					$i++;
+					$item_count += $item['quantity'];
+					$sub_total += ($product['price'] * $item['quantity']);
 
-					} //ends the for each on line 42
-					?>
-				</tbody>
-			</table>
+				} //ends the for each on line 42
+
+				$tax = TAXRATE * $sub_total
+				$tax = number_format($tax,2);
+				$grand_total = $tax + $sub_total;
+				
+				?>
+			</tbody>
+		</table>
 	</div>
 </div>
