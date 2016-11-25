@@ -11,3 +11,9 @@ if(CHECKOUTMODE == 'TEST') {
 	define('STRIPE_PRIVATE','insertYourOwnStripeKey');
 	define('STRIPE_PUBLIC','insertYourOwnStripeKey')
 }
+
+if(CHECKOUTMODE == 'LIVE') {
+	define('STRIPE_PRIVATE','insertYourOwnStripeKey');
+	define('STRIPE_PUBLIC','insertYourOwnStripeKey')
+}
+ ?>
