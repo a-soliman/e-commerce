@@ -86,9 +86,19 @@ if ($cart_id !='') {
 				$tax = TAXRATE * $sub_total
 				$tax = number_format($tax,2);
 				$grand_total = $tax + $sub_total;
-				
+
 				?>
 			</tbody>
 		</table>
+		<table class="table table-bordered table-condensed text-right">
+			<legend>Totals</legend>
+			<thead class="totals-table-header">
+				<th>Total Items</th>
+				<th>Sub Total</th>
+				<th>Tax</th>
+				<th>Grand Total</th>
+			</thead>
+		</table>
+
 	</div>
 </div>
