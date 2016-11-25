@@ -108,5 +108,8 @@ if ($cart_id !='') {
 			</tbody>
 		</table>
 
+		<!-- CHECK Out Button-->
+		<button class="btn btn-primary pull-right" type="button" data-toggle="modal" data-target="#checkoutModal">
+		<span> <i class="fa fa-shopping-cart" aria-hidden="true"></i></span> Check Out</button>
 	</div>
 </div>
