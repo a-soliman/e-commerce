@@ -9,11 +9,11 @@ define ('CHECKOUTMODE', 'TEST'); // Change "TEST" to "LIVE" when you're ready to
 
 if(CHECKOUTMODE == 'TEST') {
 	define('STRIPE_PRIVATE','insertYourOwnStripeKey');
-	define('STRIPE_PUBLIC','insertYourOwnStripeKey')
+	define('STRIPE_PUBLIC','insertYourOwnStripeKey');
 }
 
 if(CHECKOUTMODE == 'LIVE') {
 	define('STRIPE_PRIVATE','insertYourOwnStripeKey');
-	define('STRIPE_PUBLIC','insertYourOwnStripeKey')
+	define('STRIPE_PUBLIC','insertYourOwnStripeKey');
 }
  ?>
