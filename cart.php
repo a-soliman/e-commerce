@@ -98,6 +98,14 @@ if ($cart_id !='') {
 				<th>Tax</th>
 				<th>Grand Total</th>
 			</thead>
+			<tbody>
+				<tr>
+					<td><?=$item_count;?></td>
+					<td><?=money($sub_total);?></td>
+					<td><?=money($tax);?></td>
+					<td class="bg-success"><?=money($grand_total);?></td>
+				</tr>
+			</tbody>
 		</table>
 
 	</div>
