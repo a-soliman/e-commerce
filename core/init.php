@@ -8,7 +8,7 @@ if (mysqli_connect_error()) {
 
 session_start();
 require_once $_SERVER['DOCUMENT_ROOT'].'/toturial/bootstrap4/config.php';
-require_once BASEURL. 'helpers/helpers.php';
+require_once BASEURL. '/toturial/bootstrap4/helpers/helpers.php';
 
 $cart_id = '';
 if (isset($COOKIE[CART_COOKIE])) {
