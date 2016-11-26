@@ -83,7 +83,7 @@ if ($cart_id !='') {
 
 				} //ends the for each on line 42
 
-				$tax = TAXRATE * $sub_total
+				$tax = TAXRATE * $sub_total;
 				$tax = number_format($tax,2);
 				$grand_total = $tax + $sub_total;
 
