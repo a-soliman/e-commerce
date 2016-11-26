@@ -199,9 +199,7 @@ if ($cart_id !='') {
 											<?php endfor; ?>
 											</select>
 										</div>
-
 									</div>
-
 								</div>
 							</form>
 						</div>
