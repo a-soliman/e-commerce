@@ -139,16 +139,69 @@ if ($cart_id !='') {
 									</div>
 									<div class="from-group col-md-6">
 										<label for="email">Email:</label>
-										<input type="email" class="email" id="email" name="email">
+										<input type="email" class="form-control" id="email" name="email">
 									</div>
 									<div class="from-group col-md-6">
 										<label for="street">Street Address:</label>
-										<input type="text" class="street" id="street" name="street" data-stripe="address_line1">
+										<input type="text" class="form-control" id="street" name="street" data-stripe="address_line1">
 									</div>
 									<div class="from-group col-md-6">
 										<label for="street2">Street Address 2:</label>
-										<input type="text" class="street2" id="street2" name="street2" data-stripe="address_line2">
+										<input type="text" class="form-control" id="street2" name="street2" data-stripe="address_line2">
 									</div>
+									<div class="from-group col-md-6">
+										<label for="city">City:</label>
+										<input type="text" class="form-control" id="city" name="city" data-stripe="address_city">
+									</div>
+									<div class="from-group col-md-6">
+										<label for="state">State:</label>
+										<input type="text" class="form-control" id="state" name="state" data-stripe="address_state">
+									</div>
+									<div class="from-group col-md-6">
+										<label for="zip_code">Zip Code:</label>
+										<input type="number" class="form-control" id="zip_code" name="zip_code" data-stripe="address_zip">
+									</div>
+									<div class="from-group col-md-6">
+										<label for="country">Country:</label>
+										<input type="text" class="form-control" id="country" name="country" data-stripe="address_country">
+									</div>
+
+									<div id="step2" style="display: none;">
+										<div class="form-group col-md-3">
+											<label for="name">Name on Card:</label>
+											<input type="text" id="name" class="form-control" data-stripe="name">
+										</div>
+										<div class="form-group col-md-3">
+											<label for="number">Card Number:</label>
+											<input type="number" id="number" class="form-control" data-stripe="number">
+										</div>
+										<div class="form-group col-md-3">
+											<label for="cvc">CVC:</label>
+											<input type="number" id="cvc" class="form-control" data-stripe="cvc">
+										</div>
+										<div class="form-group col-md-3">
+											<label for="exp-month">Expiration Month:</label>
+											<select id="exp-month" class="form-control" data-stripe="exp-month">
+												<option value=""></option>
+												<<?php for($i=1;$i < 13; i++): ?>
+												<option value="<?=$i;?>"><?=$i;?></option>
+											<?php endfor; ?>
+											</select>
+										</div>
+
+										<div class="form-group col-md-3">
+											<label for="exp-month">Expiration Year:</label>
+											<select id="exp-year" class="form-control" data-stripe="exp-year">
+												<option value=""></option>
+												<<?php $yr = date("Y"); ?>
+												<<?php for($i=0;$i < 11; i++): ?>
+												<option value="<?=$yr+$i;?>"><?=$yr+$i;?></option>
+											<?php endfor; ?>
+											</select>
+										</div>
+
+									</div>
+
 								</div>
 							</form>
 						</div>
