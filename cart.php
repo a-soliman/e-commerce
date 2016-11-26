@@ -199,13 +199,18 @@ if ($cart_id !='') {
 											<?php endfor; ?>
 											</select>
 										</div>
-									</div>
-								</div>
+
+									</div> <!-- step2 -->
+								</div><!-- step1 -->
+
+								<div class="modal-footer">
+									
+								</div><!-- modal-footer -->
 							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+						</div> <!-- row -->
+					</div> <!-- modal-body -->
+				</div> <!-- modal-content -->
+			</div> <!-- modal-dialog -->
+		</div> <!-- modal -->
+	</div> <!-- row -->
+</div> <!-- col-md-12 -->
