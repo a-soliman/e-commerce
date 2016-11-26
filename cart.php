@@ -109,7 +109,33 @@ if ($cart_id !='') {
 		</table>
 
 		<!-- CHECK Out Button-->
+
 		<button class="btn btn-primary pull-right" type="button" data-toggle="modal" data-target="#checkoutModal">
 		<span> <i class="fa fa-shopping-cart" aria-hidden="true"></i></span> Check Out</button>
+
+		<!-- Check Out Modal -->
+
+		<div class="modal fade" id="checkoutModal" tabindix="-1" role="dialog" aria-labeledby="checkoutModalLabel">
+			<div class="modal-dialog modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="checkoutModalLabel">Shipping Address</h4>
+					</div>
+					<div class="modal-body">
+						<div class="row">
+							<form action="thankyou.php" method="post" id="payment-form">
+								<span class="bg-danger" id="payment-error"></span>
+								<input type="hidden" name="tax" value="<?=$tax; ?>">
+								<input type="hidden" name="sub_total" value="<?=$sub_total; ?>">
+								<input type="hidden" name="grand_total" value="<?=$grand_total; ?>">
+								<input type="hidden" name="cart_id" value="<?=$cart_id; ?>">
+								<input type="hidden" name="description" value="<?=$item_count.'item'.(($item_count>1)?'s');'').' from RedstoneShop.'; ?>">
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
