@@ -131,6 +131,25 @@ if ($cart_id !='') {
 								<input type="hidden" name="grand_total" value="<?=$grand_total; ?>">
 								<input type="hidden" name="cart_id" value="<?=$cart_id; ?>">
 								<input type="hidden" name="description" value="<?=$item_count.'item'.(($item_count>1)?'s');'').' from RedstoneShop.'; ?>">
+
+								<div id="step1" style="display: block;" >
+									<div class="from-group col-md-6">
+										<label for="full_name">Full Name:</label>
+										<input type="text" class="form-control" id="full_name" name="full_name">
+									</div>
+									<div class="from-group col-md-6">
+										<label for="email">Email:</label>
+										<input type="email" class="email" id="email" name="email">
+									</div>
+									<div class="from-group col-md-6">
+										<label for="street">Street Address:</label>
+										<input type="text" class="street" id="street" name="street" data-stripe="address_line1">
+									</div>
+									<div class="from-group col-md-6">
+										<label for="street2">Street Address 2:</label>
+										<input type="text" class="street2" id="street2" name="street2" data-stripe="address_line2">
+									</div>
+								</div>
 							</form>
 						</div>
 					</div>
