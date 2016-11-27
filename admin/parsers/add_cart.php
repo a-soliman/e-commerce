@@ -1,5 +1,5 @@
 <?php 
-	REQUIRE_ONCE $_SERVER['DOCUMENT ROOT'].'/core/init.php'
+	require_once $_SERVER['DOCUMENT_ROOT'].'toturial/bootsrap4/core/init.php';
 	$product_id = sanatize($_POST['product_id']);
 	$size = sanatize($_POST['size']);
 	$available = sanatize($_POST['available']);
