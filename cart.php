@@ -250,4 +250,19 @@
  			$form.get(0).submit();
  		}
  	};
+ 	$(function($) {
+ 		$('#payment-form').submit(function(event) {
+ 			var $form = $(this);
+
+ 			//Disable the submit button to prevent repeated clicks
+ 			$form.find('button').prop('disabled', true);
+ 		
+ 			Stripe.find.createToken($form, stripeResponseHandler);
+
+ 			//prevent the form from submitting with default action
+ 			return false;
+ 		});
+ 	});
  </script>
+
+ <?php include 'includes/footer.php' ?>
