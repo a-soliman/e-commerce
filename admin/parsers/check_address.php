@@ -19,4 +19,21 @@
 		'country' => 'Country'
 		
 		);
+
+	// check if all required filled are filled out properly
+	foreach ($required as $f => $d) {
+		if(empty($_POST[$f]) || $_POST[$f] == '' ) {
+			$errors[] = $d.'is required.';
+		}
+	}
+
+	// check if valid email address
+	if(!filter_var($email,FILTER_VALIDATE_EMAIL)) {
+		$errors[] = 'please enter a valid email.';
+	}
+	if(!empty($errors)) {
+		echo display_errors($errors);
+	}elase{
+		echo "passed";
+	}
 ?>
