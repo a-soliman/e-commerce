@@ -8,4 +8,15 @@
 	$state = sanatize($_POST['state']);
 	$zip_code = sanatize($_POST['zip_code']);
 	$country = sanatize($_POST['country']);
+	$errors = array();
+	$required =array(
+		'full_name' => 'FullName'
+		'email' => 'Email'
+		'street' => 'Street Adress'
+		'city' => 'City'
+		'state' => 'State'
+		'zip_code' => 'Zip Code'
+		'country' => 'Country'
+		
+		);
 ?>
