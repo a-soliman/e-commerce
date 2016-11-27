@@ -25,7 +25,7 @@
 	function update_cart(mode,edit_id,edit_size) {
 		var data = {"mode" : mode, "edit_id" : edit_id, "edit_size" : edit_size};
 		$.ajax ({
-			url ; '/admin/parsers/update_cart.php',
+			url : '/admin/parsers/update_cart.php',
 			method : "post",
 			data : data,
 			success : function() {
