@@ -44,7 +44,7 @@
 		var available = $('#available').val();
 		
 		var error = '';
-		var data = $('#add_product_form').seralize();
+		var data = $('#add_product_form').serialize();
 
 		if (size == '' || quantity == '' || quantity == 0) {
 			error += '<p class="text-danger text-center">You Must Choose a size and quantity</p>'
@@ -57,7 +57,7 @@
 
 		} else {
 			$.ajax ({
-				url : '/admin/parsers/add_cart.php',
+				url : '/bootstrap4/admin/parsers/add_cart.php',
 				method : 'post',
 				data : data,
 				success : function() {
