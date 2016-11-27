@@ -40,6 +40,19 @@
 		if($item_match != 1) {
 			$new_items = array_merge($item,$previous_items);
 		}
-		
+
+		$items_json = json_encode($new_items);
+		$cart_expire = date("Y-m-d H:i:s",startotime("+30 days"));
+		$db->query("UPDATE cart SET items = '{$items_json}', expire_date = ;'{$cart_expire}'WHERE id = '{$cart_id}' ");
+		setcookie(CART_COOKIE,'',1,"/",$domain,false);
+		setcookie(CART_COOKIE,$cart_id,CART_COOKIE_EXPIRE,'/',$domain,false);
+
+	} else{
+		//add the cart to the database and set the cookie
+		$items_json =json_encode($item);
+		$cart_expire = date("Y-m-d H:i:s",startotime("+30 days"));
+		$db->query("INSERT INTO cart (items,expire_date) VALUES ('{$items_json}', '{$cart_expire}')");
+		$cart_id = $db->$insert_id;
+		setcookie(CART_COOKIE,$cart_id,CART_COOKIE_EXPIRE,'/',$domain,false);
 	}
 ?>
