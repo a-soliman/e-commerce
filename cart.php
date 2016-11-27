@@ -206,7 +206,7 @@
  			'country' : $('#country').val()
  		};
  		$.ajax({
- 			url: '/bootstrap4/admin/parsers/check_address.php',
+ 			url: '/toturial/bootstrap4/admin/parsers/check_address.php',
  			method : 'POST',
  			data : data,
  			success : function(data) {
