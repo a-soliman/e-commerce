@@ -57,7 +57,7 @@
 
 		} else {
 			$.ajax ({
-				url : '/bootstrap4/admin/parsers/add_cart.php',
+				url : '/toturial/bootstrap4/admin/parsers/add_cart.php',
 				method : 'post',
 				data : data,
 				success : function() {
