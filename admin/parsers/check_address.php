@@ -1,5 +1,5 @@
 <?php 
-	require_once $_SERVER['DOCUMENT_ROOT'].'tutorial/bootsrap4/core/init.php';
+	require_once $_SERVER['DOCUMENT_ROOT'].'toturial/bootsrap4/core/init.php';
 	$name = sanatize($_POST['full_name']);
 	$email = sanatize($_POST['email']);
 	$street = sanatize($_POST['street']);
