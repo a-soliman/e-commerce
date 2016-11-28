@@ -36,5 +36,9 @@
 		$db->query("UPDATE cart SET items = '{$json_updated}' WHERE id = '{$cart_id}'");
 		$SESSION['success_flash'] = 'Your shopping cart has been updated!';
 	}
-	
+
+	if (empty[$updated_items]) {
+		$db->query("DELETE FROM cart WHERE id = '{$cart_id}'");
+		setcookie(CART_COOKIE,'',1,"/",$domain,false);
+	}
 ?>
