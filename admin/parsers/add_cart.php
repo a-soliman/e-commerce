@@ -1,9 +1,9 @@
 <?php 
 	require_once $_SERVER['DOCUMENT_ROOT'].'/toturial/bootsrap4/core/init.php';
-	$product_id = sanatize($_POST['product_id']);
-	$size = sanatize($_POST['size']);
-	$available = sanatize($_POST['available']);
-	$quantity = sanatize($_POST['quantity']);
+	$product_id = sanitize($_POST['product_id']);
+	$size = sanitize($_POST['size']);
+	$available = sanitize($_POST['available']);
+	$quantity = sanitize($_POST['quantity']);
 
 	$item = array();
 
