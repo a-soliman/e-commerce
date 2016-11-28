@@ -8,4 +8,33 @@
 	$items = json_decode($result['items'],true);var_dump($result);
 	$updated_items = array();
 	$domain = (($_SERVER['HTTP_HOST'] != 'localhost')?'.'.$_SERVER['HTTP_HOST'];false);
+
+	if($mode == 'removeone') {
+		foreach($items as $item) {
+			if ($item['id'] == $edit_id && $item['size'] == $edit_size) {
+				$item['quantity'] = $item['quantity'] - 1;
+			}
+
+			if ($item['quantity'] > 0) {
+				$updated_items[] = $item;
+			}
+		}
+	}
+
+	if ($mode == 'addone') {
+		foreach ($items as $item) {
+			if ($item['id'] == $edit_id && $item['size'] == $edit_size) {
+				$item['quantity'] = $item['quantity'] + 1;
+			}
+
+			$updated_items[] = $item;
+		}
+	}
+
+	if (!empty($updated_items)) {
+		$json_updated = json_encode($updated_items);
+		$db->query("UPDATE cart SET items = '{$json_updated}' WHERE id = '{$cart_id}'");
+		$SESSION['success_flash'] = 'Your shopping cart has been updated!';
+	}
+	
 ?>
