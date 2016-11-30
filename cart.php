@@ -183,86 +183,82 @@
       <?php endif; ?>
     </div>
  </div>
+<script>
+  function back_address(){
+    jQuery('#payment-errors').html("");
+    jQuery('#step1').css("display","block");
+    jQuery('#step2').css("display","none");
+    jQuery('#next_button').css("display","inline-block");
+    jQuery('#back_button').css("display","none");
+    jQuery('#checkout_button').css("display","none");
+    jQuery('#checkoutModalLabel').html("Shipping Address");
+  }
 
- <script>
- 	function back_address() {
- 		$('#payment-errors').html("");
- 		$('#step1').css("display", "block");
- 		$('#step2').css("display", "none");
- 		$('#next_button').css("display", "inline-block");
- 		$('#back_button').css("display", "none");
- 		$('#checkout_button').css("display", "none");
- 		$('#checkoutModalLabel').html("Shipping Address");
- 	}
+  function check_address(){
+    var data = {
+      'full_name' : jQuery('#full_name').val(),
+      'email' : jQuery('#email').val(),
+      'street' : jQuery('#street').val(),
+      'street2' : jQuery('#street2').val(),
+      'city' : jQuery('#city').val(),
+      'state' : jQuery('#state').val(),
+      'zip_code' : jQuery('#zip_code').val(),
+      'country' : jQuery('#country').val(),
+    };
+    jQuery.ajax({
+      url : '/tutorial/admin/parsers/check_address.php',
+      method : 'POST',
+      data : data,
+      success : function(data){
+        if(data != 'passed'){
+          jQuery('#payment-errors').html(data);
+        }
+        if(data == 'passed'){
+          jQuery('#payment-errors').html("");
+          jQuery('#step1').css("display","none");
+          jQuery('#step2').css("display","block");
+          jQuery('#next_button').css("display","none");
+          jQuery('#back_button').css("display","inline-block");
+          jQuery('#checkout_button').css("display","inline-block");
+          jQuery('#checkoutModalLabel').html("Enter Your Card Details");
+        }
+      },
+      error : function(){alert("Something Went Wrong");},
+    });
+  }
 
- 	function check_address() {
- 		var data = {
- 			'full_name' : $('#full_name').val(),
- 			'email' : $('#email').val(),
- 			'street' : $('#street').val(),
- 			'city' : $('#city').val(),
- 			'state' : $('#state').val(),
- 			'zip_code' : $('#zip_code').val(),
- 			'country' : $('#country').val()
- 		};
- 		$.ajax({
- 			url: '/toturial/bootstrap4/admin/parsers/check_address.php',
- 			method : 'POST',
- 			data : data,
- 			success : function(data) {
- 				if(data != 'passed') {
- 					$('#payment-errors').html(data);
- 				}
- 				if(data == 'passed') {
- 					$('#payment-errors').html("");
- 					$('#step1').css("display", "none");
- 					$('#step2').css("display", "block");
- 					$('#next_button').css("display", "none");
- 					$('#back_button').css("display", "inline-block");
- 					$('#checkout_button').css("display", "inline-block");
- 					$('#checkoutModalLabel').html("Enter Your Credit Card Details");
- 				}
- 			},
- 			error : function() {
- 				alert("Something went wrong!");
- 			},
+  Stripe.setPublishableKey('<?=STRIPE_PUBLIC;?>');
 
- 		});
- 	}
+  function stripeResponseHandler(status, response) {
+  var $form = $('#payment-form');
 
- 	Stripe.setPublishableKey('<?=STRIPE_PUBLIC;?>');
+  if (response.error) {
+    // Show the errors on the form
+    $form.find('#payment-errors').text(response.error.message);
+    $form.find('button').prop('disabled', false);
+  } else {
+    // response contains id and card, which contains additional card details
+    var token = response.id;
+    // Insert the token into the form so it gets submitted to the server
+    $form.append($('<input type="hidden" name="stripeToken" />').val(token));
+    // and submit
+    $form.get(0).submit();
+  }
+};
 
- 	function stripeResponseHandler(status, response) {
- 		var $form = $('payment-form');
+  jQuery(function($) {
+  $('#payment-form').submit(function(event) {
+    var $form = $(this);
 
- 		if(response.error) {
- 			//Show the errors on the form
- 			$form.find('#payment-errors').text(response.error.message);
- 			$form.find('button').prop('disabled', false);
- 		} else {
- 			//response contains the id and the card which contaons the additional card details
- 			var token = response.id;
+    // Disable the submit button to prevent repeated clicks
+    $form.find('button').prop('disabled', true);
 
- 			// insert the token into the form so it gets submeted to the server
- 			$form.append($('<input type="hidden" name="stripeToken" />')).val(token);
+    Stripe.card.createToken($form, stripeResponseHandler);
 
- 			//and submit  
- 			$form.get(0).submit();
- 		}
- 	};
- 	$(function($) {
- 		$('#payment-form').submit(function(event) {
- 			var $form = $(this);
+    // Prevent the form from submitting with the default action
+    return false;
+  });
+});
+</script>
 
- 			//Disable the submit button to prevent repeated clicks
- 			$form.find('button').prop('disabled', true);
- 		
- 			Stripe.find.createToken($form, stripeResponseHandler);
-
- 			//prevent the form from submitting with default action
- 			return false;
- 		});
- 	});
- </script>
-
- <?php include 'includes/footer.php' ?>
+ <?php include 'includes/footer.php'; ?>
