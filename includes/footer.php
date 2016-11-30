@@ -1,72 +1,65 @@
 <!-- Footer -->
 <footer class="text-center" id="footer">
-	<p>&copy; Copyright 2016-2017</p>
-	<p>Ahmed Soliman</p>
-	
+  <p>&copy; Copyright 2016-2017</p>
+  <p>Ahmed Soliman</p>
 </footer>
 
+
 <script>
-	function detailsmodal(id) {
-		var data = {"id" : id};
-		$.ajax({
-			url: 'details-modal.php',
-			method: "post",
-			data: data,
-			success: function(data) {
-				$('body').append(data);
-				$('#details-1').modal('toggle');
-			},
-			error: function() {
-				alert("Something went wrong!")
-			}
-		});
-	}
+ function detailsmodal(id){
+   var data = {"id" : id};
+   jQuery.ajax({
+     url : '/tutorial/includes/detailsmodal.php',
+     method : "post",
+     data : data,
+     success: function(data){
+       jQuery('body').append(data);
+       jQuery('#details-modal').modal('toggle');
+     },
+     error: function(){
+       alert("Something went wrong!");
+     }
+   });
+ }
 
-	function update_cart(mode,edit_id,edit_size) {
-		var data = {"mode" : mode, "edit_id" : edit_id, "edit_size" : edit_size};
-		$.ajax ({
-			url : '/admin/parsers/update_cart.php',
-			method : "post",
-			data : data,
-			success : function() {
-				location.reload();
-			},
-			error : function() {
-				alert("Something went wrong!");
-			}
-		})
-	}
+ function update_cart(mode,edit_id,edit_size){
+   var data = {"mode" : mode, "edit_id" : edit_id, "edit_size" : edit_size};
+   jQuery.ajax({
+     url : '/tutorial/admin/parsers/update_cart.php',
+     method : "post",
+     data : data,
+     success : function(){location.reload();},
+     error : function(){alert("Something went wrong.");},
+   });
+ }
 
-	function add_to_cart() {
-		$('#modal_errors').html("");
-		var size = $('#size').val();
-		var quantity = $('#quantity').val();
-		var available = $('#available').val();
-		
-		var error = '';
-		var data = $('#add_product_form').serialize();
-
-		if (size == '' || quantity == '' || quantity == 0) {
-			error += '<p class="text-danger text-center">You Must Choose a size and quantity</p>'
-			$('#modal_errors').html(error)
-			return;
-		} else if(quantity > available) {
-			error += '<p class="text-danger text-center">There are only' +available+ '</p>'
-			$('#modal_errors').html(error)
-			return;
-
-		} else {
-			$.ajax ({
-				url : '/toturial/bootstrap4/admin/parsers/add_cart.php',
-				method : 'post',
-				data : data,
-				success : function() {
-					location.reload();
-				},
-				error: function() {
-					alert("Something went wrong!");
-				}
-			})
-		}
-	}
+ function add_to_cart(){
+  jQuery('#modal_errors').html("");
+  var size = jQuery('#size').val();
+  var quantity = jQuery('#quantity').val();
+  var available = jQuery('#available').val();
+  var error = '';
+  var data = jQuery('#add_product_form').serialize();
+  if(size == '' || quantity == '' || quantity == 0){
+    error += '<p class="text-danger text-center">You must choose a size and quantity.</p>';
+    jQuery('#modal_errors').html(error);
+    return;
+  }else if(quantity > available){
+    error += '<p class="text-danger text-center">There are only '+available+' available.</p>';
+    jQuery('#modal_errors').html(error);
+    return;
+  }else{
+    jQuery.ajax({
+      url : '/tutorial/admin/parsers/add_cart.php',
+      method : 'post',
+      data : data,
+      success : function(){
+        location.reload();
+      },
+      error : function(){alert("Something went wrong");}
+    });
+  }
+ }
 </script>
+   </body>
+</html>
