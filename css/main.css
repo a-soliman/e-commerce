@@ -1,71 +1,74 @@
 /*pre-fixing*/
 * {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 p {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
-
 .navbar {
-	background-color: #800000;
-	color: #fff;
+  background-color: #800000;
+  color: #fff;
 }
-.navbar a {
-	color: #fff;
+nav.navbar a {
+  color: #fff;
 }
 nav.navbar a:hover {
-	background-color: rgb(161, 61, 61);
+  background-color: rgb(161, 61, 61);
 }
 .cart {
-	float: right;
+  float: right;
+}
+ul.dropdown-menu {
+  background-color: rgba(128,0,0,0.83);
 }
 #background-image {
-	position: relative;
-	padding: 0;
-	margin: 0;
-	overflow: hidden;
-	height: 600px;
-	background-image: url(../img/background.jpg);
-	background-repeat: no-repeat;
-	background-size: 100% 700px;
-	background-position: top center;
-	background-attachment: fixed; 
+  position: relative;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  height: 600px;
+  background-image: url(../img/background.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 700px;
+  background-position: top center;
+  background-attachment: fixed; 
 }
 #image-1 {
-	position: absolute;
-	width: 50%;
-	height: 350px;
-	background-image: url(../img/ecommerce2.jpg);
-	background-repeat: no-repeat;
-	background-position: left bottom;
-	background-size: auto 200px;
-	top: -100px;
-	left: -25px;
+  position: absolute;
+  width: 50%;
+  height: 350px;
+  background-image: url(../img/ecommerce2.jpg);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: auto 200px;
+  top: -100px;
+  left: -25px;
 }
 #image-2 {
-	position: absolute;
-	width: 70%;
-	height: 190px;
-	background-image: url(../img/ecommerce.png);
-	background-repeat: no-repeat;
-	background-position: left bottom;
-	background-size: 50% 200px;
-	top: 80%;
-	margin-top: -90px;
+  position: absolute;
+  width: 70%;
+  height: 190px;
+  background-image: url(../img/ecommerce.png);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 50% 200px;
+  top: 80%;
+  margin-top: -90px;
 }
 
 /*Featured Products*/
 .featured-products {}
 .featured-products img {
-	max-height: 200px;
+  max-height: 200px;
 }
 img.details {}
 /*footer*/
 footer {
-	margin-top: 50px;
-	background-color: #800000;
-	color: #e3dad1;
-	padding: 20px 0;
+  margin-top: 50px;
+  background-color: #800000;
+  color: #e3dad1;
+  padding: 20px 0;
+  clear: both;
 }
